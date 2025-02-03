@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Login</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -8,15 +9,45 @@
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-<form action="/login" method="POST">
-    <h3>Login Here</h3>
 
-    <label for="username">Username</label>
-    <input type="text" placeholder="Email" id="username" name = "email">
-    <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password" name = "password">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!-- Display error message if there is an error -->
 
-    <button type="submit">Log In</button>
-</form>
+            <div class="card">
+                <div class="card-body">
+                    <!-- Move the header here, inside the card, above the form -->
+
+                    <form th:action="@{/login}" method="post" class="form-horizontal">
+                        <div th:if="${param.error}" class="error-message">
+                            Invalid Email or Password
+                        </div>
+
+                        <!-- Display success message if the user logs out -->
+                        <div th:if="${param.logout}" class="error-message">
+                            You have been logged out.
+                        </div>
+                        <h2 class="text-center mb-4">Login Here</h2>
+                        <div class="form-group mb-3">
+                            <label class="control-label" for="username">Email</label>
+                            <input type="text" id="username" name="username" class="form-control" placeholder="Enter email address" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="control-label" for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <button type="submit" class="btn btn-primary">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

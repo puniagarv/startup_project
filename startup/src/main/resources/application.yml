@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/newdb
     username: root
-    password: admin # You might want to use an environment variable for sensitive data
+    password: root # You might want to use an environment variable for sensitive data
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

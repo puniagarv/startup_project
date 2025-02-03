@@ -6,6 +6,24 @@
     box-sizing: border-box;
 }
 
+
+  h2 {
+            color: black;
+        }
+        .form-control {
+            color: black;
+        }
+
+        /* Style for error messages */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+     label{
+        color: black !important         ;
+     }
+
 body {
     /* Set the background image */
     background-image: url('/image/5.jpg');

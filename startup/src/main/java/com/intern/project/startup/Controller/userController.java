@@ -18,17 +18,19 @@ public class userController {
     private UserService userService;
 
     @GetMapping("/register/signup")
-    private String showpage(Model model){
+    public String getSignup(){
         return "signup";
     }
 
-//    @GetMapping("/register/login")
-//    private String loginpage(Model model){
-//         return "login";
-//    }
+
+    @GetMapping("/welcome")
+    public String getWelcome() {
+        return "welcome";
+    }
 
     @GetMapping("/login")
-    private String loginpage(Model model){
+    public String getLogin() {
         return "login";
     }
 }
+

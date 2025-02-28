@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-section="users">Users</a></li>
+                    <li><a href="#" class="nav-link" data-section="roles">Roles</a></li>
+                    <li><a href="#" class="nav-link" data-section="logout">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Users Section -->
+            <div class="section" id="users-section">
+                <h2>Add User</h2>
+                <div class="success-message hidden" id="userSuccessMessage"></div>
+                <div class="error-message hidden" id="userErrorMessage"></div>
+                <form id="userForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email ID</label>
+                            <input type="email" id="email" name="emailId" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phoneNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="district">District</label>
+                            <input type="text" id="district" name="district" required>
+                        </div>
+                    </div>
+                  
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date of Birth <span class="required">*</span></label>
+                            <input type="date" name="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roles">Role</label>
+                            <select id="roles" name="roles" required>
+                                <option value="">Select a role</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row submit-row">
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <!-- Roles Section -->
+            <div class="section hidden" id="roles-section">
+                <div class="roles-header">
+                    <h2>Roles Management</h2>
+                    <button id="addRoleBtn" class="add-role-btn">
+                        <span>+</span> Add Role
+                    </button>
+                </div>
+                <div class="roles-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rolesTableBody">
+                            <!-- The table body will be populated dynamically by JavaScript -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+      <!-- Add Role Panel -->
+    <div class="panel-container hidden" id="addRolePanel">
+        <div class="panel-content">
+            <h3>Add New Role</h3>
+            <div class="success-message hidden" id="roleSuccessMessage"></div>
+            <div class="error-message hidden" id="roleErrorMessage"></div>
+            <form id="addRoleForm">
+                <div class="form-group">
+                    <label for="roleName">Role Name</label>
+                    <input type="text" id="roleName" name="roleName" required>
+                </div>
+                <div class="panel-buttons">
+                    <button type="button" class="cancel-btn" id="cancelAddRole">Cancel</button>
+                    <button type="submit" class="save-btn" id="saveRole">Save</button>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+
+    </div>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(to bottom, #2c3e50, #3498db);
+  color: white;
+  padding: 30px 20px;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar .nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  padding: 50px 40px;
+  background-color: #f8fafc;
+}
+
+.section {
+  background-color: white;
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin-bottom: 35px;
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  border-radius: 2px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Form styles */
+#userForm {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  flex: 1;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e1e8ef;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  background-color: white;
+}
+
+.submit-row {
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  color: white;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Table styles */
+.roles-table {
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Button styles */
+.edit-btn, .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding: 20px;
+  }
+
+  .main-content {
+      margin-left: 0;
+      padding: 20px;
+  }
+
+  .form-row {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .section {
+      padding: 20px;
+  }
+
+  .section h2 {
+      font-size: 24px;
+  }
+
+  .submit-btn {
+      width: 100%;
+  }
+  /* Previous CSS remains same, adding new styles: */
+
+.roles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.add-role-btn {
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.add-role-btn span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.add-role-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+/* Slide Panel Styles */
+.slide-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.slide-panel.active {
+  right: 0;
+}
+
+.panel-content {
+  padding: 30px;
+  height: 100%;
+}
+
+.panel-content h3 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.panel-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.cancel-btn, .save-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.save-btn {
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  color: white;
+}
+
+.cancel-btn:hover, .save-btn:hover {
+  transform: translateY(-2px);
+}
+
+select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e1e8ef;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f8fafc;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+@media (max-width: 768px) {
+  .slide-panel {
+      width: 100%;
+      right: -100%;
+  }
+}
+
+}
+
+/* Add Role Button - Top Right Corner */
+.roles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-role-btn {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.add-role-btn:hover {
+  background-color: darkred;
+}
+
+/* Slide Panel - Right Side */
+.slide-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.slide-panel.active {
+  right: 0;
+}
+
+/* Panel Content */
+.panel-content {
+  padding: 30px;
+  height: 100%;
+}
+
+/* Save and Cancel Buttons - Bottom Right */
+.panel-buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.cancel-btn, .save-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.save-btn {
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  color: white;
+}
+
+.cancel-btn:hover, .save-btn:hover {
+  transform: translateY(-2px);
+}
+
+select {
+  width: 100%;
+  padding: 15px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:hover {
+  border-color: #999;
+}
+
+select:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+
+select option {
+  padding: 8px;
+}
+
+.success-message, .error-message {
+  padding: 8px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px; /* Make messages smaller */
+  font-weight: normal; /* Reduce boldness */
+}
+
+.success-message {
+  color: white;
+  background-color: green;
+}
+
+.error-message {
+  color: white;
+  background-color: red;
+  font-size: 12px; /* Reduce font size further for error */
+  font-weight: lighter; /* Make error message less bold */
+}
+
+
+
+/* Styling for the roles section */
+#roles-section {
+  margin-top: 30px; /* Push content down to avoid overlapping */
+  padding: 20px;
+}
+
+/* Scrollable roles table */
+.roles-table {
+  max-height: 500px; /* Adjust based on your preference */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+/* Ensure the table takes full width */
+.roles-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.roles-table th,
+.roles-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faded {
+  opacity: 0.2;
+  transition: opacity 0.3s ease-in-out;
+}
+.highlighted {
+  background-color: rgba(255, 255, 0, 0.4);
+  transition: background-color 0.3s ease-in-out;
+}
+
+label.switch {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background: #d51717; /* Red (Off) */
+  border-radius: 25px;
+  transition: background 0.3s ease-in-out;
+}
+
+label.switch > input[type="checkbox"] {
+  display: none;
+}
+
+label.switch > span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* The small white circle */
+label.switch > span:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+}
+
+/* Change background to green when checked */
+label.switch > input[type="checkbox"]:checked + span {
+  background: #4CAF50; /* Green (On) */
+}
+
+/* Move the white circle to the right when checked */
+label.switch > input[type="checkbox"]:checked + span:after {
+  transform: translate(25px, -50%);
+}

@@ -5,12 +5,12 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/newdb
     username: root
-    password: root # You might want to use an environment variable for sensitive data
+    password: Gaurav@128 # You might want to use an environment variable for sensitive data
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update  # Change to 'update' or 'validate' for production
+      ddl-auto: update # Change to 'update' or 'validate' for production
       dialect: org.hibernate.dialect.MySQL8Dialect # Explicit dialect for MySQL 8
     show-sql: true
 
@@ -18,7 +18,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: puniagaurav14@gmail.com
-    password: tgcdsqqwaqibnwrj
+    password: pmnrahpafwmchsxz
     properties:
       mail:
         smtp:
@@ -31,3 +31,4 @@ logging:
     org:
       springframework:
         security=DEBUG:
+

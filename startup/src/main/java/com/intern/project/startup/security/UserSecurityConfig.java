@@ -39,7 +39,7 @@ public class UserSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity security) throws Exception {
         return security
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .csrf(csrf -> csrf.disable()) // ❌ Disable CSRF (since we're using tokens, not cookies)
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login", "/register/**", "/css/**", "/js/**").permitAll()
                         .anyRequest().authenticated()

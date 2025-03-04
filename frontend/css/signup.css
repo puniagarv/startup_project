@@ -6,23 +6,25 @@
 }
 
 body {
-    background-image: url("https://media.radissonhotels.net/image/destination-pages--apac/promotional/16256-148400-f75939540_3xl.jpg?impolicy=HomeHero"); /* Replace with actual image path */
     background-size: cover;
     background-position: center;
+    background: linear-gradient(to right, #9aa5b0, #1c2532);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 120vh;
+    padding-bottom: 50px;
+    overflow-x: hidden; 
 }
 
 .container {
     background: white;
-    padding: 1.5rem 1rem; /* Reduced padding to make it smaller */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1rem;/* Reduced padding to make it smaller */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(197, 133, 133, 0.1);
     width: 600px;
     margin-top: 50px;
-    margin-bottom: 50px;
+    
 }
 
 

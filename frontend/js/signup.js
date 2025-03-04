@@ -134,7 +134,7 @@ document.getElementById("signupForm").addEventListener("submit", async function 
     }
 
     try {
-        const response = await fetch("http://localhost:8080/register", {
+        const response = await fetch("https://startup-project-40wn.onrender.com/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(jsonData)

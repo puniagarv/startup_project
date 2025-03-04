@@ -1,38 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('loginForm');
+    const loginButton = document.getElementById('loginButton');
     const errorMessage = document.getElementById('message');
-    const logoutMessage = document.getElementById('logout-message'); // Now correctly referenced
 
-    if (!loginForm || !errorMessage || !logoutMessage) {
+    if (!loginButton || !errorMessage) {
         console.error('Required elements are missing in the HTML.');
         return;
     }
 
-    loginForm.addEventListener('submit', function (event) {
+    loginButton.addEventListener('click', function (event) {
         event.preventDefault();
 
         // Get input values
-        const emailId = document.getElementById('username').value.trim();
+        const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value.trim();
 
         // Validate fields
         if (!username || !password) {
-            errorMessage.innerText = 'Email and password are required!';
+            errorMessage.innerText = '⚠ Email and password are required!';
             errorMessage.style.display = 'block';
-            logoutMessage.style.display = 'none';
+            errorMessage.style.color = 'red';
             return;
         }
 
-        // Hide previous errors and messages
+        // Hide previous errors
         errorMessage.style.display = 'none';
-        logoutMessage.style.display = 'none';
 
-        fetch('http://localhost:8080/login', {
+        fetch('https://startup-project-40wn.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ emailId, password })
+            body: JSON.stringify({ emailId: username, password })
         })
         .then(async response => {
             if (!response.ok) {
@@ -42,34 +40,16 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            console.log('Response:', data);
-            
-            // ✅ Store token in localStorage
             if (data.jwtToken) {
                 localStorage.setItem("jwtToken", data.jwtToken);
-                console.log("Token stored successfully:", data.jwtToken);
+                window.location.href = "/html/dashboard.html";
             } else {
                 throw new Error("Token not received from server");
             }
-        
-            // ✅ Redirect to the dashboard if login is successful
-            window.location.href = "/html/dashboard.html";
         })
         .catch(error => {
-            errorMessage.innerText = error.message || 'Something went wrong. Please try again later.';
+            errorMessage.innerText = `❌ ${error.message}`;
             errorMessage.style.display = 'block';
         });
-        
-        
     });
-
-    // Display logout message if the URL contains "?logout"
-
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('logout')) {
-        logoutMessage.innerText = 'You have been logged out successfully.';
-        logoutMessage.style.display = 'block';
-    }
-
-
 });

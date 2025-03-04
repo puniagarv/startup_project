@@ -2,48 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himachal Pradesh Govt - Login</title>
     <link rel="stylesheet" href="/css/login.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="text-center mb-4">Login Here</h2>
-                    
-                    <!-- Added logout-message div -->
-                    <div id="logout-message" class="success-message" style="display: none;"></div>
-                    <div id="message" class="error-message"></div>
-
-                    <form id="loginForm" class="form-horizontal">
-                        <div class="form-group mb-3">
-                            <label class="control-label" for="username">Email</label>
-                            <input type="text" id="username" name="username" class="form-control" placeholder="Enter email address" />
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label class="control-label" for="password">Password</label>
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" />
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <button type="submit" class="btn register-btn">Log In</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <div class="login-container">
+        <img src="/image/Himachal_Pradesh_seal.svg" alt="Himachal Pradesh Govt Logo" class="logo">
+        <h2>Himachal Pradesh Government</h2>
+        <p class="sub-heading">Login to your account</p>
+    
+        <!-- Error Message Container -->
+        <div id="message" class="error-message" style="display: none;"></div>
+    
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" placeholder="Email Id" required>
         </div>
+    
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+            <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+        </div>
+    
+        <button type="submit" id="loginButton">Login</button>
+        <button type="button" class="register-btn" onclick="window.location.href='html/signup.html'">Register</button>
+    
+        <a href="#" class="forgot-password">Forgot Password?</a>
     </div>
-</div>
-
-<script src="/js/login.js"></script>
-
+    
+    <script src="js/login.js"></script>
 </body>
 </html>

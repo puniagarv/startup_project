@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!jwtToken) {
         // Redirect to login page if token is not present
         console.log("helooooo");
-        window.location.href = "/html/login.html";
+        window.location.href = "index.html";
     }
     else{
         console.log(jwtToken);
@@ -92,7 +92,7 @@ if(addRoleForm){
         }
 
         try {
-            const response = await fetch("http://localhost:8080/addRole", {
+            const response = await fetch("https://startup-project-40wn.onrender.com/addRole", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -342,7 +342,7 @@ if (userForm) {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/adduser", {
+            const response = await fetch("https://startup-project-40wn.onrender.com/adduser", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -399,7 +399,7 @@ if (userForm) {
    // Fetching the role from the server
    const rolesDropdown = document.getElementById("roles");
    if (rolesDropdown) {
-       fetch("http://localhost:8080/getRoles",{
+       fetch("https://startup-project-40wn.onrender.com/getRoles",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -428,7 +428,7 @@ if (userForm) {
 // Fetch and display roles in the table
 
  if (rolesTableBody) {
-        fetch("http://localhost:8080/getRoles",{
+        fetch("https://startup-project-40wn.onrender.com/getRoles",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -558,7 +558,7 @@ if (userForm) {
 
         if(required){
             try {
-                const response = await fetch("http://localhost:8080/updateRole", {
+                const response = await fetch("https://startup-project-40wn.onrender.com/updateRole", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -633,7 +633,7 @@ if (userForm) {
         console.log("Deleting role with ID:", roleId);
     
         try {
-            const response = await fetch(`http://localhost:8080/deleteRole/${roleId}`, {
+            const response = await fetch(`https://startup-project-40wn.onrender.com/deleteRole/${roleId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -892,7 +892,7 @@ if (userForm) {
         // Optional: Show a logout message
         alert("You have been logged out!");
     
-        window.location.href = "/html/login.html"; 
+        window.location.href = "/"; 
         
     });
     

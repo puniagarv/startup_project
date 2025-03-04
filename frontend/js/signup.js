@@ -151,7 +151,7 @@ document.getElementById("signupForm").addEventListener("submit", async function 
 
         if (response.ok) {
             console.log("✅ Success:", responseData);
-            window.location.href = "http://127.0.0.1:5500/html/success.html";
+            window.location.href = "https://startup-project-40wn.onrender.com/html/success.html";
         } else {
             if (response.status === 409) {
                 const emailInput = form.querySelector("input[name='emailId']");
@@ -173,12 +173,12 @@ document.getElementById("signupForm").addEventListener("submit", async function 
                 // ✅ Let the user see the error first, and give them an option to go to login page
             } else {
                 console.error("❌ Error:", responseData);
-                window.location.href = "http://127.0.0.1:5500/html/internalserver.html";
+                window.location.href = "https://startup-project-40wn.onrender.com/html/internalserver.html";
             }
         }
         
     } catch (error) {
         console.error("⚠️ Fetch Error:", error);
-        window.location.href = "http://127.0.0.1:5500/html/internalserver.html";
+        window.location.href = "https://startup-project-40wn.onrender.com/html/internalserver.html";
     }
 });

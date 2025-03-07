@@ -399,7 +399,7 @@ if (userForm) {
    // Fetching the role from the server
    const rolesDropdown = document.getElementById("roles");
    if (rolesDropdown) {
-       fetch("http://localhost:8080/getRoles",{
+       fetch("https://startup-project-40wn.onrender.com/getRoles",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -428,7 +428,7 @@ if (userForm) {
 // Fetch and display roles in the table
 
  if (rolesTableBody) {
-        fetch("http://localhost:8080/getRoles",{
+        fetch("https://startup-project-40wn.onrender.com/getRoles",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

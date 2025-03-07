@@ -121,7 +121,7 @@ function attachSignupListener() {
                 formData.forEach((value, key) => jsonData[key] = value);
 
                 try {
-                    const response = await fetch("http://localhost:8080/register", {
+                    const response = await fetch("https://startup-project-40wn.onrender.com/register", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(jsonData)

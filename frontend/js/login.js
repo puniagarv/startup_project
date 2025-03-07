@@ -1,20 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
+function attachLoginListener() {
     const loginButton = document.getElementById('loginButton');
     const errorMessage = document.getElementById('message');
 
     if (!loginButton || !errorMessage) {
-        console.error('Required elements are missing in the HTML.');
+        console.error('❌ loginButton or errorMessage not found in DOM.');
         return;
     }
 
     loginButton.addEventListener('click', function (event) {
         event.preventDefault();
+        console.log("✅ Login button clicked!");
 
-        // Get input values
         const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value.trim();
 
-        // Validate fields
         if (!username || !password) {
             errorMessage.innerText = '⚠ Email and password are required!';
             errorMessage.style.display = 'block';
@@ -22,14 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Hide previous errors
-        errorMessage.style.display = 'none';
-
-        fetch('https://startup-project-40wn.onrender.com/login', {
+        console.log(username, password);
+        fetch('http://localhost:8080/login', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ emailId: username, password })
         })
         .then(async response => {
@@ -48,8 +43,43 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
         .catch(error => {
-            errorMessage.innerText = `❌ ${error.message}`;
+            errorMessage.innerText = `${error.message}`;
             errorMessage.style.display = 'block';
+            errorMessage.style.color = 'red';
         });
     });
-});
+
+    console.log("✅ Login event listener attached!");
+}
+
+// Function to attach event listener for register button
+function attachRegisterListener() {
+    const registerButton = document.getElementById("showRegister");
+    console.log("🔍 Checking if registerButton exists...");
+    if (registerButton) {
+        registerButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("🔄 Switching to Register Form...");
+
+            if (typeof loadContent === "function") {
+                loadContent('/html/signup.html', event);
+            } else {
+                console.error("❌ loadContent function is not available.");
+            }
+        });
+        console.log("✅ Register event listener attached!");
+    } else {
+        console.error("❌ registerButton not found in DOM.");
+    }
+}
+
+// Delay attaching the event listeners after `login.html` is inserted
+setTimeout(() => {
+    console.log("🔍 Checking if loginButton exists...");
+    if (document.getElementById("loginButton")) {
+        attachLoginListener();
+        attachRegisterListener(); // Attach register button listener
+    } else {
+        console.error("❌ loginButton not found, event listener not attached.");
+    }
+}, 200);

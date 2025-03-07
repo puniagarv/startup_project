@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himachal Pradesh Govt - Login</title>
-    <link rel="stylesheet" href="/css/login.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <div class="login-container">
-        <img src="/image/Himachal_Pradesh_seal.svg" alt="Himachal Pradesh Govt Logo" class="logo">
-        <h2>Himachal Pradesh Government</h2>
-        <p class="sub-heading">Login to your account</p>
-    
-        <!-- Error Message Container -->
-        <div id="message" class="error-message" style="display: none;"></div>
-    
-        <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" id="username" placeholder="Email Id" required>
+
+    <!-- Navbar (Fixed) -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="brand-container">
+            <img src="/image/6.svg" alt="Himachal Pradesh Govt Logo" class="logo">
+            <a class="navbar-brand" href="#">Himachal Pradesh Government</a>
         </div>
-    
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="password" placeholder="Password" required>
-            <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
-        </div>
-    
-        <button type="submit" id="loginButton">Login</button>
-        <button type="button" class="register-btn" onclick="window.location.href='html/signup.html'">Register</button>
-    
-        <a href="#" class="forgot-password">Forgot Password?</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="loadContent('/html/internal-content.html', event)">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="loadContent('/html/login.html', event)">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="loadContent('/html/signup.html', event)">Register</a>
+          </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div id="content">
+        <!-- Default home content will be loaded here -->
     </div>
-    
-    <script src="js/login.js"></script>
+    <script src="/js/home.js" defer></script>
 </body>
 </html>

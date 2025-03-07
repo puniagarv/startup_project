@@ -1,35 +1,66 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #9aa5b0, #1c2532);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+
+/* Make sure the container takes full height */
+/* Ensure no extra margin between navbar and login container */
+#content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 100px;
+  
 }
 
+/* Navbar Styling - Remove unnecessary padding */
+.navbar {
+    padding: 5px 50px; /* Reduce padding to minimize spacing */
+}
+
+/* Ensure login container remains properly styled */
 .login-container {
-    background: #fff;
-    padding: 30px;
+    background: white;
+    padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    width: 350px;
+    text-align: center; /* Centers text inside the container */
+    box-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.5),  /* Soft white outer glow */
+        0 0 15px rgba(0, 0, 0, 0.2),       /* Darker shadow for depth */
+        inset 0 0 10px rgba(255, 255, 255, 0.3); /* Inner glow for glossy effect */
+    width: 30%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 3px solid transparent; /* Transparent border for gradient effect */
+    background-clip: padding-box; /* Ensures border doesn't affect padding */
+    position: relative;
 }
 
-.logo {
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #fbf8f2, #fbfaf9, #ffcc80); /* Glossy gradient */
+    z-index: -1; /* Places behind the container */
+    filter: blur(8px); /* Soft glow effect */
+}
+
+.login-logo {
+    display: block;
+    margin: 0 auto 10px; /* Centers the logo and adds spacing below */
     width: 100px;
-    margin-bottom: 10px;
 }
-
 h2 {
     margin-bottom: 10px;
     color: #333;

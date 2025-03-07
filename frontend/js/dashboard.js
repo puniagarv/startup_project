@@ -92,7 +92,7 @@ if(addRoleForm){
         }
 
         try {
-            const response = await fetch("https://startup-project-40wn.onrender.com/addRole", {
+            const response = await fetch("http://localhost:8080/addRole", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -342,7 +342,7 @@ if (userForm) {
         }
 
         try {
-            const response = await fetch("https://startup-project-40wn.onrender.com/adduser", {
+            const response = await fetch("http://localhost:8080/adduser", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -399,7 +399,7 @@ if (userForm) {
    // Fetching the role from the server
    const rolesDropdown = document.getElementById("roles");
    if (rolesDropdown) {
-       fetch("https://startup-project-40wn.onrender.com/getRoles",{
+       fetch("http://localhost:8080/getRoles",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -428,7 +428,7 @@ if (userForm) {
 // Fetch and display roles in the table
 
  if (rolesTableBody) {
-        fetch("https://startup-project-40wn.onrender.com/getRoles",{
+        fetch("http://localhost:8080/getRoles",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -558,7 +558,7 @@ if (userForm) {
 
         if(required){
             try {
-                const response = await fetch("https://startup-project-40wn.onrender.com/updateRole", {
+                const response = await fetch("http://localhost:8080/updateRole", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -633,7 +633,7 @@ if (userForm) {
         console.log("Deleting role with ID:", roleId);
     
         try {
-            const response = await fetch(`https://startup-project-40wn.onrender.com/deleteRole/${roleId}`, {
+            const response = await fetch(`http://localhost:8080/deleteRole/${roleId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

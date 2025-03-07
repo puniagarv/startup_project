@@ -1,0 +1,72 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 50px; 
+    background: url('/image/4.jpg') no-repeat center center; /* Set background image */
+    background-size: cover; /* Cover the entire navbar */
+}
+
+/* Brand Logo and Text */
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 30px; 
+}
+.logo {
+    width: 80px; 
+    height: auto;
+}
+.navbar-brand {
+    font-size: 20px; 
+    font-weight: bold; 
+    color: white !important; /* Force white text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* More visible shadow */
+}
+
+/* Navigation Links */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.nav-item {
+    padding: 0 20px; 
+}
+
+/* Default Link Styling */
+.nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    color: white !important; /* Make all text white */
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+/* Hover Effect: Pop-Out Look */
+.navbar-nav .nav-link:hover {
+    background-color: #007bff !important; /* Blue background */
+    color: white !important; /* White text */
+    border-radius: 8px;
+    padding: 10px 18px; /* Slightly bigger padding */
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.15); /* More pop effect */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Disabled Link Styling */
+.navbar-nav .nav-link.disabled {
+    color: rgba(255, 255, 255, 0.5) !important; /* Light gray */
+    pointer-events: none; /* Disable clicking */
+    cursor: default;
+}
+
+/* Search Bar */
+.form-inline {
+    margin-left: 30px;
+}

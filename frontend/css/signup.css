@@ -5,46 +5,86 @@
     font-family: Arial, sans-serif;
 }
 
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 50px; 
+    background: url('/image/4.jpg') no-repeat center center; 
+    background-size: cover; 
+    width: 100%;
+}
+
+/* Body Styling */
 body {
     background-size: cover;
     background-position: center;
-    background: linear-gradient(to right, #9aa5b0, #1c2532);
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack elements vertically */
     align-items: center;
-    min-height: 120vh;
-    padding-bottom: 50px;
-    overflow-x: hidden; 
+    min-height: 10vh; 
 }
 
+/* Signup Container */
+/* Signup Container with Glossy Border */
 .container {
     background: white;
-    padding: 1rem 1rem;/* Reduced padding to make it smaller */
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(197, 133, 133, 0.1);
-    width: 600px;
-    margin-top: 50px;
-    
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.5),  /* Soft white outer glow */
+        0 0 15px rgba(0, 0, 0, 0.2),       /* Darker shadow for depth */
+        inset 0 0 10px rgba(255, 255, 255, 0.3); /* Inner glow for glossy effect */
+    width: 1000px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 3px solid transparent; /* Transparent border for gradient effect */
+    background-clip: padding-box; /* Ensures border doesn't affect padding */
+    position: relative;
 }
 
-
-
-.logo {
-    text-align: center;
-    margin-bottom: 2rem;
+/* Adding the glossy border effect */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #fbf8f2, #fbfaf9, #ffcc80); /* Glossy gradient */
+    z-index: -1; /* Places behind the container */
+    filter: blur(8px); /* Soft glow effect */
 }
 
-.logo img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+/* Adjusting Glow on Hover */
+.container:hover {
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.6), 
+        0 0 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.signup-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.signup-logo img {
+    width: 100px; /* Adjust size */
 }
 
 .progress-bar {
     background: #e0e0e0;
     height: 4px;
     border-radius: 2px;
-    margin: 1rem 0 2rem;
+    margin: 1rem 20rem 1rem;
 }
 
 .progress {

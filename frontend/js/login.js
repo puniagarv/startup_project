@@ -22,7 +22,7 @@ function attachLoginListener() {
         }
 
         console.log(username, password);
-        fetch('http://localhost:8080/login', {
+        fetch('https://startup-project-40wn.onrender.com/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ emailId: username, password })

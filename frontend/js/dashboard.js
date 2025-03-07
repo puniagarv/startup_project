@@ -92,7 +92,7 @@ if(addRoleForm){
         }
 
         try {
-            const response = await fetch("http://localhost:8080/addRole", {
+            const response = await fetch("https://startup-project-40wn.onrender.com/addRole", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -342,7 +342,7 @@ if (userForm) {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/adduser", {
+            const response = await fetch("https://startup-project-40wn.onrender.com/adduser", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -558,7 +558,7 @@ if (userForm) {
 
         if(required){
             try {
-                const response = await fetch("http://localhost:8080/updateRole", {
+                const response = await fetch("https://startup-project-40wn.onrender.com/updateRole", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -633,7 +633,7 @@ if (userForm) {
         console.log("Deleting role with ID:", roleId);
     
         try {
-            const response = await fetch(`http://localhost:8080/deleteRole/${roleId}`, {
+            const response = await fetch(`https://startup-project-40wn.onrender.com/deleteRole/${roleId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
